@@ -1,0 +1,25 @@
+body{
+    background-color: blue; 
+    text-align: center;
+}
+
+p.testoverde{
+    text-align: left;
+    font-size: xx-large;
+}
+
+div p{          
+    color:yellow
+}
+
+#testorosso{
+    color:red;
+    background-color: yellow;
+}
+
+.testoverde{
+    color:green;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
