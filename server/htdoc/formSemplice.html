@@ -28,7 +28,7 @@
     </head>
     <body>
         <h1>Modulo di registrazione</h1>
-        <form action="/gestisciDatiForm" method="get">
+        <form action="/gestisciDatiForm" method="post">
             <fieldset>
             <p>
                 <label for="fname">Inserisci nome:</label><br>
@@ -41,6 +41,7 @@
             </fieldset>
             <p>
                 <label for="fsesso">Sesso:</label>
+                <input type="radio" name="fsesso" value="0" checked>ND
                 <input type="radio" name="fsesso" value="1">M
                 <input type="radio" name="fsesso" value="2">F
             </p>

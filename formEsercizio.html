@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form di registrazione</title>
+        <style>
+            body {
+                margin-left: 30%;
+                margin-right: 30%;
+                font-family: Arial;
+                font-size: 22px;
+                text-align: center;
+                background: #8364f3; 
+            }
+            p {
+                text-align: left;
+                color: rgb(255, 162, 39);
+            } 
+            #btnid {
+                text-align: center;		
+            }
+            
+            input[type = submit], input[type = reset] {
+                background-color: rgb(4, 255, 25); 
+                font-size: 22px;	
+             }		
+        </style>	
+
+    </head>
+    <body>
+        <h1>Modulo di registrazione</h1>
+        <form action="/gestisciDatiForm" method="get">
+            <fieldset>
+            <p>
+                <label for="fname">Inserisci nome:</label><br>
+                <input type="text" name="fname" size="20" required>
+            </p>
+            <p>
+                <label for="fcognome">Inserisci cognome:</label><br>
+                <input type="text" name="fcognome" pattern="^[a-zA-Z\s]+$" required>
+            </p>
+            <p>
+                <label for="start">Data di nascita:</label>
+                
+                <input type="date" id="fnascita" name="fnascita" value="1900-01-01" min="1900-01-01" max="2024-07-28" />
+            </p>
+            <p>
+                <label for="fsesso">Sesso:</label>
+                <input type="radio" name="fsesso" value="0" checked>ND
+                <input type="radio" name="fsesso" value="1">M
+                <input type="radio" name="fsesso" value="2">F
+            </p>
+            <p>
+                <label for="findirizzo">Inserisci indirizzo:</label><br>
+                <input type="text" name="findirizzo" size="20" required>
+            </p>
+            <p>
+                <label for="fComune">Comune di nascita</label><br>
+                <select name="fComune"required>
+                    <option value="Milano">Milano</option>
+                    <option value="Bari">Bari</option>
+                    <option value="Torino" selected>Torino</option>
+                    <option value="Roma">Roma</option>
+                    <option value="Pescara">Pescara</option>
+                    <option value="Ascoli Piceno">Ascoli Piceno</option>
+                    <option value="Napoli">Napoli</option>
+                    <option value="Palermo">Palermo</option>
+                </select>
+            </p>
+            <p>
+                <label for="fcf">Codice Fiscale:</label><br>
+                <input type="text" name="fcf" size="20" pattern="^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$" required>
+            </p>
+            <p>
+                <label for="findirizzo">Indirizzo email:</label><br>
+                <input type="text" name="femail" size="20" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" required>
+            </p>
+        </fieldset>
+        <br>
+        <br>
+            <input type="submit" value="invia dati">
+        </form>
+    </body>
+</html>

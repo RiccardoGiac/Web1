@@ -9,6 +9,10 @@ app.listen(iPortaTcp,sIpAddress, () => console.log('API is running on http://' +
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//**********
+//Routing
+//********** 
+
 //pagina di invio della form
 app.get('/formRegistrazione', (req, res) => {
 console.log("Mi hai chiesto la form di registrazione");
@@ -27,7 +31,7 @@ else
 });
 
 app.get('/sendFile', (req, res) => {
-    console.log("Mi hai chiesto la form di registrazione");
+    console.log("Mi hai chiesto la form di invio del file");
     res.sendFile("sendfile.html", { root: './htdoc' });
     });
 
@@ -35,5 +39,37 @@ app.get('/sendFile', (req, res) => {
 app.get('/gestisciDatiForm', (req, res) => {
 console.log(req.query.fname);
 console.log(req.query.fcognome);
-res.send("<html>Buona serata " + req.query.fname + " " + req.query.fcognome + "</html>");
+response = "<html>Buona serata " + req.query.fname + req.query.fcognome;
+
+if(req.query.fsesso== "1")
+    response += "<br>Sei un maschio"
+else if(req.query.fsesso=="0")
+    response += "<br>Non hai un sesso definito"
+else
+    response += "<br>Sei una femmina"
+
+response += "<br>Vieni da " + req.query.fComune;
+
+response += "<br> Ti voglio bene </html>";
+
+res.send(response);
 });
+
+app.post('/gestisciDatiForm', (req, res) => {
+    console.log(req.body.fname);
+    console.log(req.body.fcognome);
+    response = "<html>Buona mattinata " + req.body.fname + req.body.fcognome;
+    
+    if(req.body.fsesso== "1")
+        response += "<br>Sei un maschio"
+    else if(req.body.fsesso=="0")
+        response += "<br>Non hai un sesso definito"
+    else
+        response += "<br>Sei una femmina"
+    
+    response += "<br>Vieni da " + req.body.fComune;
+    
+    response += "<br> Ti voglio bene </html>";
+    
+    res.send(response);
+    });
