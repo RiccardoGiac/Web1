@@ -30,7 +30,7 @@ console.log("Hai inserito " + str);
 process.exit(0);
 */
 
-
+/*
 var a;
 var b;
 a = prompt("Inserisci primo numero:")
@@ -41,7 +41,7 @@ c = a + b
 
 console.log("La somma vale " + c) 
 process.exit(0);
-
+*/
 
 /*
 var a;
@@ -54,7 +54,7 @@ c = a1 + b1
 console.log("La somma vale " + c) 
 */
 
-
+/*
 a = prompt("Inserisci primo numero:")
 b = prompt("Inserisci secondo numero:")
 c = prompt("Inserisci operatore:")
@@ -66,7 +66,27 @@ if(c=="-")
 	d = a1 - b1
 
 console.log("Risultato " + d) 
+*/
 
+var A = 20
+var B = 10
+do{
+var C = prompt("Vuoi inserire un numero?(si/no) ")
+if (C=="si"){
+    C = prompt("Inserisci un numero: ")
+    B = parseInt(C)
+        
+}else if(C=="no")
+    console.log("Va bene allora ecco il risultato:")
+
+else {
+    console.log("Errore, input errato(Si prega di riprovare scrivendo si o no)")
+    process.exit(0);
+}  
+
+console.log(A+B)
+process.exit(0);
+}while((C!="si")|| (C!="no"))
 
 
 
