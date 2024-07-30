@@ -68,6 +68,7 @@ if(c=="-")
 console.log("Risultato " + d) 
 */
 
+/*
 var A = 20
 var B = 10
 do{
@@ -87,7 +88,51 @@ else {
 console.log(A+B)
 process.exit(0);
 }while((C!="si")|| (C!="no"))
+*/
+/*
+vParola = "buonasera"
+for(i=0;i<vParola.length;i++)
+    console.log("La lettera " + i + " della parola è " + vParola[i])
+process.exit(0);
+*/
+consonanti = 0
+vocali = 0
+do{
+    vParola = prompt("Inserisci una parola: ")
+    vParola = vParola.toLowerCase()
+    
+    if (vParola == "exit")
+        process.exit(0);
+    
+    for(i=0; i < vParola.length;i++)
+        switch(vParola[i]){
+            case "a":
+                vocali += 1
+                break;
+            case "e":
+                vocali += 1
+                break;
+            case "i":
+                vocali += 1
+                break;  
+            case "o":
+                vocali += 1
+                break; 
+            case "u":
+                vocali += 1
+                break;         
+            default:
+                consonanti += 1
+                break;
+        }
 
+
+    console.log("Le consonanti della parola " + vParola + " sono " +  consonanti)
+    console.log("Le vocali della parola " + vParola + " sono " + vocali)    
+    vocali = 0
+    consonanti = 0
+
+}while (vParola != "exit")
 
 
 
